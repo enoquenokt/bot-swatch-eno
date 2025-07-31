@@ -20,25 +20,26 @@ function verificarSenha() {
 function gerarSinal() {
   const agora = new Date();
   const hora = agora.toLocaleTimeString("pt-PT", { hour12: false });
-  const cores = ["🟦 Azul", "🟪 Roxo", "🌸 Rosa"];
+  const cores = ["ðŸŸ¦ Azul", "ðŸŸª Roxo", "ðŸŒ¸ Rosa"];
   const aleatorio = Math.floor(Math.random() * 3);
   let queda = "", protecao = "";
   if (aleatorio === 0) {
-    queda = "Até 1.99x";
+    queda = "AtÃ© 1.99x";
     protecao = "1 tentativa";
   } else if (aleatorio === 1) {
-    queda = "Até 8.70x";
+    queda = "AtÃ© 8.70x";
     protecao = "2 tentativas";
   } else {
     queda = "Acima de 10.00x";
     protecao = "3 tentativas";
   }
   const sinal = `
-    🕒 Próximo Sinal: ${hora}<br>
-    🎯 Cor Prevista: ${cores[aleatorio]}<br>
-    ✈️ Queda Prevista: ${queda}<br>
-    🛡️ Proteção: ${protecao}<br>
-    ✅ Confiança: 98%
+    ðŸ•’ PrÃ³ximo Sinal: ${hora}<br>
+    ðŸŽ¯ Cor Prevista: ${cores[aleatorio]}<br>
+    âœˆï¸ Queda Prevista: ${queda}<br>
+    ðŸ›¡ï¸ ProteÃ§Ã£o: ${protecao}<br>
+    âœ… ConfianÃ§a: 98%<br><br>
+    <button onclick="gerarSinal()">ðŸ” Gerar PrÃ³ximo Sinal</button>
   `;
   sinalDiv.innerHTML = sinal;
   alerta.play();
